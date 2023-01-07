@@ -19,7 +19,7 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
     //Category::factory(100)->create();
-  //  Lot::factory(1000)->create();
+    //Lot::factory(1000)->create();
     category_lot::factory(1000)->create();
         // \App\Models\User::factory(10)->create();
 

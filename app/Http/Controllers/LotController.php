@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Resources\CategoryResource;
+
 use App\Http\Resources\LotResource;
 use App\Models\Category;
 use App\Models\Lot;
@@ -35,22 +35,23 @@ class LotController extends Controller
      * Store a newly created resource in storage.
      *
      * @param  \App\Http\Requests\StoreLotRequest  $request
-     * @return \Illuminate\Http\Response
+     * @return LotResource
      */
     public function store(StoreLotRequest $request)
     {
-        //
+        $created_lot= Category::create($request->validated());
+        return new LotResource($created_lot);
     }
 
     /**
      * Display the specified resource.
      *
      * @param  \App\Models\Lot  $lot
-     * @return \Illuminate\Http\Response
+     * @return LotResource
      */
     public function show(Lot $lot)
     {
-        //
+        return new LotResource(Lot::with('category')->findOrFail($lot));
     }
 
     /**
@@ -69,21 +70,26 @@ class LotController extends Controller
      *
      * @param  \App\Http\Requests\UpdateLotRequest  $request
      * @param  \App\Models\Lot  $lot
-     * @return \Illuminate\Http\Response
+
      */
     public function update(UpdateLotRequest $request, Lot $lot)
     {
-        //
+        $lot->update($request->validated());
+
+        return new LotResource($lot);
     }
 
     /**
      * Remove the specified resource from storage.
      *
      * @param  \App\Models\Lot  $lot
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Http\JsonResponse
      */
     public function destroy(Lot $lot)
     {
-        //
+        $lot->delete();
+
+        return response()->json(['message' => 'task was successful']);
+
     }
 }

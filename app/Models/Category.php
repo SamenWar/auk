@@ -11,7 +11,11 @@ use Illuminate\Database\Eloquent\Model;
 class Category extends Model
 {
     use HasFactory;
+
+    protected $fillable = ['name'];
+
     public function lot()
+
     {
         return $this->belongsToMany(Lot::class, 'category_lots');
     }
