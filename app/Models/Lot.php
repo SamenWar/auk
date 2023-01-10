@@ -9,13 +9,9 @@ use Illuminate\Database\Eloquent\Model;
  * @method static paginate()
  */
 class Lot extends Model
-
-
-
-
 {
 
-    protected $fillable = ['name'];
+    protected $fillable = ['name', 'description'];
     use HasFactory;
     public function categories()
     {

@@ -51,7 +51,7 @@ class CategoryController extends Controller
      */
     public function show(Category $category)
     {
-        return new CategoryResource(Category::with('lots')->findOrFail($category));
+        return new CategoryResource(Category::with('lot')->findOrFail($category->id));
     }
 
     /**

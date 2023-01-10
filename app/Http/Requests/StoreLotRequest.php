@@ -24,7 +24,8 @@ class StoreLotRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            "name"=>'required|unique:lots|max:255',
+            "description"=>'required|unique:lots|max:255'
         ];
     }
 }

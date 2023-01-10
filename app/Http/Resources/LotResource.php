@@ -19,6 +19,7 @@ class LotResource extends JsonResource
 
             'id'=>$this->id,
             'name'=> $this->name,
+            'description'=>$this->description,
             'categotries'=>$this->categories,
 
 

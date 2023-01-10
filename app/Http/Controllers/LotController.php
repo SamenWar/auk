@@ -39,7 +39,7 @@ class LotController extends Controller
      */
     public function store(StoreLotRequest $request)
     {
-        $created_lot= Category::create($request->validated());
+        $created_lot= Lot::create($request->validated());
         return new LotResource($created_lot);
     }
 
@@ -51,7 +51,7 @@ class LotController extends Controller
      */
     public function show(Lot $lot)
     {
-        return new LotResource(Lot::with('category')->findOrFail($lot));
+        return new LotResource(Lot::with('category')->findOrFail($lot->id));
     }
 
     /**
@@ -72,6 +72,8 @@ class LotController extends Controller
      * @param  \App\Models\Lot  $lot
 
      */
+
+
     public function update(UpdateLotRequest $request, Lot $lot)
     {
         $lot->update($request->validated());
@@ -85,11 +87,13 @@ class LotController extends Controller
      * @param  \App\Models\Lot  $lot
      * @return \Illuminate\Http\JsonResponse
      */
-    public function destroy(Lot $lot)
-    {
+    public function destroy(Lot $lot){
+
         $lot->delete();
 
         return response()->json(['message' => 'task was successful']);
 
+
     }
+
 }
