@@ -16,7 +16,7 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Закрыть</button>
-                    <button type="submit" class="btn btn-primary add_cat" data-bs-dismiss="modal">Добавить Категорию</button>
+                    <button type="submit" class="btn btn-primary edit_cat" data-bs-dismiss="modal">Добавить Категорию</button>
                 </div>
             </div>
         </div>

@@ -23,7 +23,23 @@ $(document).ready(function(){
 
     getLot()
 
-});
+})
+$(document).on('click', '.editLot', function (){
+
+    let id = $(this).data('id')
+    let name = $(this).data('name')
+    let description = $(this).data('description')
+
+    $('#idAddLot').val(id)
+    $('#nameAddLot').val(name)
+    $('#descAddLot').val(description)
+
+
+})
+
+
+
+
 function getLot(){
     $('tbody').find('td').remove();
 

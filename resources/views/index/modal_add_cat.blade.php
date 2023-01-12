@@ -11,7 +11,7 @@
                     <div class="errMsgContainer"></div>
                     <div class="form-group">
                         <label for="nameEditLot">Название категории</label>
-                        <input class="form-control" id="nameAddCat"  name="nameAddCat" type="text" required>
+                        <input class="form-control" id="nameAddCat" value="шшш" name="nameAddCat" type="text" required>
                     </div>
                 </div>
                 <div class="modal-footer">

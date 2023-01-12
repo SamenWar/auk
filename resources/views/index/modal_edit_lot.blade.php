@@ -10,7 +10,8 @@
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Закрыть"></button>
                 </div>
                 <div class="modal-body">
-                    <div class="errMsgContainer"></div>
+                    <div class="errMsgContainer">
+                        <input class="hidden" id="idAddLot" type="text" name="name" required>
                     <div class="form-group">
                         <label for="name">Название лота</label>
                         <input class="form-control" id="nameAddLot" type="text" name="name" required>
